@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="resources/css/leaflet.css">
+        <link rel="stylesheet" href="resources/css/qgis2web.css">
+        <link rel="stylesheet" href="resources/css/fontawesome-all.min.css">
+        <link href="CSS/style-map.css" type="text/css" rel="stylesheet">
+        <link href="CSS/style-template.css" type="text/css" rel="stylesheet">
+        <script src="JS/jquery-3.4.1.js"></script>
+        <script src="JS/status.js"></script>
+        <script src="JS/main.js"></script>
+        <script src="resources/js/qgis2web_expressions.js"></script>
+        <script src="resources/js/leaflet.js"></script>
+        <script src="resources/js/leaflet.rotatedMarker.js"></script>
+        <script src="resources/js/Autolinker.min.js"></script>
+        <script src="resources/data/Supermarks_1.js"></script>
+        <script src="resources/data/Shabat.js"></script>
+        <script src="resources/data/Kosher.js"></script>
+        <script src="JS/map.js"></script>
+        <style>
+        #mymap {
+            width: 100vh;
+            height: 60vh;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div class="up-container"> 
+            <div class="left-container">
+                    <table>
+                            <tr>                                           
+                                    <td class="ofek"><a href ="index.html" style="margin-right: 50px;"> Find Supermarket </a></td>
+                                    <td><a href ="addSupermarket.html" style="margin-right: 50px;"> Add SuperMarket </a></td>                                    
+                                    <td><a href="AboutUs.html"> About Us </a></td>
+                            </tr>
+                    </table>
+            </div> 
+            <div class="right-container" id="log">
+                    <span></span>                           
+            </div>                
+        </div>
+        <div id="allPage">
+            <div id="name" style="margin: 20px;">
+                <span></span>
+            </div>
+            <div  class ="up_button">
+                <button id="gpsButton">Find My Location</button>
+                <button id="openShabat">Open On Saturday</button>
+                <button id="kosher">Kosher</button>
+                <button id="allSupermarket">All SuperMarket</button>
+            </div>
+            <br><br>
+            <div class="container">
+                    <div class="left">       
+                        <div id="mymap"></div>
+                    </div>
+                    <div class="center" id="buttons">
+                        <div id="1" class="supermark"><p><b> האחים סרור בע"מ</b></p>יהושע חנקין 70</div>            
+                        <div id="2" class="supermark"><p><b>מגה בעיר</b></p>סוקולוב 48</div> 
+                        <div id="3" class="supermark"><p><b>חצי חינם</b></p>המרכבה 31</div> 
+                        <div id="4" class="supermark"><p><b>מיני לשרותך</b></p>ההסתדרות 174</div> 
+                        <div id="5" class="supermark"><p><b>סיטי מרקט</b></p>יוסף אהרונוביץ 90</div> 
+                        <div id="6" class="supermark"><p><b>טיב טעם</b></p>שדרות אשכול 30</div> 
+                        <div id="7" class="supermark"><p><b>סופר אחים נשיא</b></p>ג'סי כהן 10</div> 
+                        <div id="8" class="supermark"><p><b>אלירן מרקט בשדרה</b></p>צבי תדמור 12</div> 
+                        <div id="9" class="supermark"><p><b>מינימרקט שלוה</b></p>ביאליק 162</div> 
+                        <div id="10" class="supermark"><p><b>רמי לוי</b></p>תמנע 6</div> 
+                        <div id="11" class="supermark"><p><b>טיב טעם</b></p>הרוקמים 26</div> 
+                        <div id="12" class="supermark"><p><b>סופר עמנואל</b></p>גאולים 46</div> 
+                        <div id="13" class="supermark"><p><b> סיטי מרקט</b></p>אריה שנקר 25</div>            
+                        <div id="14" class="supermark"><p><b>שופרסל  דיל</b></p>המרכבה 9</div> 
+                        <div id="15" class="supermark"><p><b>מיני מני</b></p>מונטיפיורי 6</div> 
+                        <div id="16" class="supermark"><p><b>מינימרקט עמנואל</b></p>קרן היסוד 31</div> 
+                        <div id="17" class="supermark"><p><b>שופרסל דיל</b></p>גולדה מאיר 7</div> 
+                        <div id="18" class="supermark"><p><b>יינות ביתן</b></p>המרגנית 2</div> 
+                        <div id="19" class="supermark"><p><b>מגה בעיר</b></p>אילת 36</div> 
+                        <div id="20" class="supermark"><p><b>שופרסל שלי</b></p>לא</div> 
+                        <div id="21" class="supermark"><p><b>מגה בעיר</b></p>סוקולוב 48</div> 
+                        <div id="22" class="supermark"><p><b>שופרסל שלי</b></p>שדרות קוגל 40</div> 
+                        <div id="23" class="supermark"><p><b>סופר זול סלמן</b></p>התנאים 3</div> 
+                        <div id="24" class="supermark"><p><b>שופרסל דיל</b></p>קרן היסוד 1</div> 
+                        <div id="25" class="supermark"><p><b>גלאט מרקט</b></p>בית לחם 9</div>            
+                        <div id="26" class="supermark"><p><b>מינימרקט דוד</b></p>יהושע רבינוביץ 11</div> 
+                        <div id="27" class="supermark"><p><b>מינימרקט גמזו</b></p>מנדלי מוכר ספרים 18</div> 
+                        <div id="28" class="supermark"><p><b>שופרסל אקספרס</b></p>זלמן ארן 1</div> 
+                        <div id="29" class="supermark"><p><b>סופר זול גבי</b></p>סוקולוב 41</div> 
+                        <div id="30" class="supermark"><p><b>יינות ביתן</b></p>שאלתיאל דוד 16</div> 
+                        <div id="31" class="supermark"><p><b>סופר ברקת</b></p>חיים לנדאו 16</div> 
+                        <div id="32" class="supermark"><p><b>א.א מינימרקט</b></p>גבעת התחמושת 19</div> 
+                        <div id="33" class="supermark"><p><b>כלבו מונטפיורי סופר אביב</b></p>מונטיפיורי 15</div> 
+                        <div id="34" class="supermark"><p><b>מזוז בעיר</b></p>חזית חמש 13</div> 
+                        <div id="35" class="supermark"><p><b>פרי אל</b></p>חזית חמש 11</div> 
+                        <div id="36" class="supermark"><p><b>מינימרקט טרומפלדור</b></p>טרומפלדור 3</div> 
+                        <div id="37" class="supermark"><p><b>אחים מוליאן</b></p>מרבד הקסמים 7</div>            
+                        <div id="38" class="supermark"><p><b>גבריאלוב סיטי מרקט</b></p>סוקולוב 81</div> 
+                        <div id="39" class="supermark"><p><b>שופרסל אקספרס</b></p>הלוחמים 62</div> 
+                        <div id="40" class="supermark"><p><b>בבלי מרקט</b></p>שדרות יופסטל 133</div> 
+                        <div id="41" class="supermark"><p><b>4u קוקיס מרקט</b></p>ההתסדרות 169</div> 
+                        <div id="42" class="supermark"><p><b>מינימרקט מקווה ישראל</b></p>מקווה ישראל 32</div> 
+                        <div id="43" class="supermark"><p><b>דון ליאון</b></p>משה שרת 4</div> 
+                        <div id="44" class="supermark"><p><b>מכולת שושי</b></p>גולומב 15</div> 
+                        <div id="45" class="supermark"><p><b>מינימרקט גבי</b></p>סוקולוב 106</div> 
+                        <div id="46" class="supermark"><p><b>מינימרקט הצעירים</b></p>סוקולוב 118</div> 
+                        <div id="47" class="supermark"><p><b>מינימרקט לוי</b></p>השיטה 31</div> 
+                        <div id="48" class="supermark"><p><b>מרקט פור יו</b></p>שדרות ירושלים 7</div> 
+                        <div id="49" class="supermark"><p><b>יש</b></p>יהושע רבינוביץ 58</div> 
+                        <div id="50" class="supermark"><p><b>יינות ביתן</b></p>המרכבה 73</div> 
+                        <div id="51" class="supermark"><p><b>חצי חינם</b></p>הכישור 22</div> 
+                        <div id="52" class="supermark"><p><b>שוק העיר</b></p>המרכבה 73</div> 
+                        <div id="53" class="supermark"><p><b>שופרסל אקספרס</b></p>שמריהו לוין 2</div> 
+                        <div id="54" class="supermark"><p><b>סיטי מרקט אקספרס</b></p>הלוחמים 37</div> 
+                        <div id="55" class="supermark"><p><b>.מינימרקט י.ל</b></p>קרית שמונה 27</div> 
+                        <div id="56" class="supermark"><p><b>קרל ברג</b></p>הסדנה 24</div>
+                        <div id="57" class="supermark"><p><b>מרכז הזול 2002</b></p>חזית חמש 11</div>
+                    </div> 
+                    <div class="right" id="details"></div>     
+            </div> 
+        </div> 
+        <div id="not_connected">
+            <h2 style="margin: 20px;">Please connect to your user or <a href="SignUp.html" class="sign">SignUp</a></h2>
+        </div>                
+    </body>
+</html>

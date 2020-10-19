@@ -1,0 +1,51 @@
+#mymap {
+    margin: 20px;
+}
+.container
+{
+    display:flex;  
+    
+}
+.left
+{
+    flex-basis: 50%;
+    flex-direction: row;
+}
+.center
+{
+    flex-basis: 25%;
+    overflow: auto;
+    overflow-x: hidden;
+    cursor: pointer;
+    height: 60vh;    
+}
+.right
+{
+       
+    height: 60vh;
+    margin-left: 10%;
+    margin-top: 5%;
+
+}
+.supermark {
+    margin-top: 10px;
+    border: 1px solid blue;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.sign
+{
+    background-color: white;
+    color:black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.up_button
+{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}

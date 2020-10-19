@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+    <link href="CSS/style-signup.css" type="text/css" rel="stylesheet">
+    <link href="CSS/style-template.css" type="text/css" rel="stylesheet">
+    <script src="JS/jquery-3.4.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>  
+    <script src="JS/config.js"></script>
+    <script src="JS/status.js"></script>
+    <script src="JS/SignUP.js"></script>
+    
+</head>
+<body>
+    <div class="up-container"> 
+        <div class="left-container">
+            <table>
+                <tr>
+                    <td class="ofek"><a href ="index.html" style="margin-right: 50px;"> Find Supermarket</a></td>
+                    <td><a href ="addSupermarket.html" style="margin-right: 50px;"> Add SuperMarket </a></td>                                        
+                    <td><a href="AboutUs.html"> About Us </a></td>
+                </tr>
+        </table>
+        </div> 
+        <div class="right-container" id="log">
+            <span></span>                           
+        </div>        
+    </div>
+    <br><br><br><br><br>
+    <div class="login">
+        <form id="form">
+            <table id = table>
+                <tr>       
+                    <td>Username</td>
+                    <td><input id="Username" type="text" required></td>
+                </tr>
+                <tr>
+                    <td>Display Name</td>
+                    <td><input id="Displayname" type="text" required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input id="password" type="password" required></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input id="confirmPassword" type="password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input  id="submit" type="submit" value="Sign Up" class="signup" onclick=newUser()></td>  
+                </tr>
+            </table>
+        </form>    
+    </div>
+</body>
+</html> 

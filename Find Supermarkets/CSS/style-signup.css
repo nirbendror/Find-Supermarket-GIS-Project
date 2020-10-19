@@ -1,0 +1,16 @@
+.login
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;   
+    
+}
+.signup
+{
+    background-color:#38A1F3;
+    color:white;
+    width: 250px;
+    font-size: 3vh;
+    cursor: pointer;
+}

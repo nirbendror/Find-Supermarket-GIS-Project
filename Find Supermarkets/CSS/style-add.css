@@ -1,0 +1,29 @@
+.page
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;       
+}
+h1 {
+    font-size:5vh;
+}
+pre {
+    font-weight: bold;
+    font-size: 2.5vh;
+}
+.submit
+{
+    background-color:#38A1F3;
+    border:0;
+    color:white;
+    width:250px;
+    font-size:2.5vh;
+    cursor: pointer;
+}
+.sign
+{
+    background-color: white;
+    color:black;
+    cursor: pointer;
+    text-decoration: underline;
+}
